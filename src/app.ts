@@ -40,4 +40,4 @@ app.webhooks.on("issues.opened", async ({ octokit, payload }) => {
 // qui permettra d'irriguer les différentes fonctions en événement.
 // Exactement comme dans l'exemple qu'on a plus haut sur un
 // événement qui écoute une "opened issue".
-createServer(createNodeMiddleware(app)).listen(3000)
+createServer(createNodeMiddleware(app)).listen(process.env.PORT ?? 3000)

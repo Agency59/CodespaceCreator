@@ -5,6 +5,7 @@
   "description": "Hello world",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "start:prod": "node dist/app.js",
     "start:dev": "node --loader ts-node/esm src/app.ts"
   },

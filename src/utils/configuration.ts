@@ -13,7 +13,7 @@ export const configuration = z.object({
 }).parse({
   appId: process.env.GH_APP_ID,
   privateKey: process.env.GH_PRIVATE_KEY,
-  webhooks: { secret: 'big-secret' },
+  webhooks: { secret: process.env.GH_WEBHOOK_SECRET },
   oauth: {
     clientId: process.env.GH_CLIENT_ID,
     clientSecret: process.env.GH_CLIENT_SECRET

@@ -59,6 +59,8 @@ app.get('/generate-dev-app', (req, res) => {
     `)
 })
 
+
+
 app.get('/redirect', async (req, res, next) => {
     try {
         const code = req.query.code
@@ -76,10 +78,11 @@ app.get('/redirect', async (req, res, next) => {
         currentEnv.GH_CLIENT_SECRET = response.client_secret
         currentEnv.GH_PRIVATE_KEY = response.pem
         currentEnv.GH_WEBHOOK_SECRET = response.webhook_secret
+        currentEnv.GH_INSTALLATION_URL=response.html_url
 
         fs.writeFileSync('.env', stringify(currentEnv))
 
-        res.send('Generated environment! You can go back to your codespace.')
+        res.send(`Generated environment! You can <a href="${response.html_url}" target="_blank">click here</a> to install your application on any repository`)
         server.close(() => {
             console.log('successfully generated environment. Happy coding!')
             process.exit(0)

@@ -2,7 +2,9 @@ version: "3.9"
 
 services:
   app:
-    image: node:20
+    build: 
+      context: ./
+      dockerfile: ./dev.Dockerfile
     volumes:
       # Update this to wherever you want VS Code to mount the folder of your project
       - ..:/workspaces:cached

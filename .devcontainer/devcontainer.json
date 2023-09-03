@@ -26,13 +26,17 @@
       "vscode": {
           "extensions": [
               "esbenp.prettier-vscode"
-          ]
+          ],
+          "settings": {
+            "terminal.integrated.defaultProfile.linux": "zsh"
+          }
       }
   },
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "node manifest.js"
+  "postCreateCommand": "node manifest.js",
+  
     // Uncomment the next line to run commands after the container is created.
     // "postCreateCommand": "cat /etc/os-release",
     // Configure tool-specific properties.

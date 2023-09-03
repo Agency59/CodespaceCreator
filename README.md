@@ -17,3 +17,5 @@ Then run the development server
 ```
 npm run start:dev
 ```
+
+If you want to test webhooks from Github, don't forget to update port visibility to `public` on the VSCode `PORTS` tab

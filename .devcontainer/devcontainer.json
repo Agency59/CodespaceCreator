@@ -28,6 +28,8 @@
               "esbenp.prettier-vscode"
           ],
           "settings": {
+            "terminal.integrated.shell.linux": "zsh",
+            "terminal.integrated.shell.osx": "zsh",
             "terminal.integrated.defaultProfile.linux": "zsh"
           }
       }

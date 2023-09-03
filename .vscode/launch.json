@@ -13,6 +13,16 @@
             "runtimeArgs": [
                 "run-script", "start:dev"
             ]
+        },
+        {
+            "name": "START:MANIFEST",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run-script", "start:manifest"
+            ]
         }
     ]
 }

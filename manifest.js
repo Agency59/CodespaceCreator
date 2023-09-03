@@ -2,6 +2,7 @@ import express from 'express'
 import { Octokit } from 'octokit'
 import {parse, stringify} from 'envfile'
 import fs from 'node:fs'
+import crypto from 'node:crypto'
 
 const envFileExists = fs.existsSync('.env')
 let currentEnv = {}
@@ -21,7 +22,7 @@ console.log('Generating a new development app...')
 const baseUrl = `https://${process.env.CODESPACE_NAME}-3000.app.github.dev`
 const installManifestUrl = `${baseUrl}/generate-dev-app`
 const manifest = {
-    "name": `needs-triage-bot-${process.env.CODESPACE_NAME}`,
+    "name": crypto.randomUUID().split('-').join(''),
     "url": "https://www.example.com",
     "hook_attributes": {
         "url": `${baseUrl}/api/github/webhooks`,
